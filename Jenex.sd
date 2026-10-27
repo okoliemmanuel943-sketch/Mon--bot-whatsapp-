@@ -1,0 +1,45 @@
+const config = {
+  nom: "MON BOT WHATSAPP",
+  prefixe: "."
+};
+
+function menu() {
+  return `
+╭━━━〔 🤖 ${config.nom} 〕━━━╮
+┃
+┃ 👋 Salut ! Bienvenue.
+┃
+┃ 📌 COMMANDES DISPONIBLES
+┃
+┃ 🔹 .menu
+┃ 🔹 .info
+┃ 🔹 .owner
+┃ 🔹 .bonjour
+┃
+╰━━━━━━━━━━━━━━━━━━╯
+  `;
+}
+
+function repondre(message) {
+  const commande = message.toLowerCase().trim();
+
+  switch (commande) {
+    case ".menu":
+      return menu();
+
+    case ".info":
+      return "🤖 Je suis MON BOT WHATSAPP !";
+
+    case ".owner":
+      return "👑 Créateur : TON NOM";
+
+    case ".bonjour":
+      return "👋 Bonjour ! Comment vas-tu ?";
+
+    default:
+      return "❌ Commande inconnue. Tape .menu";
+  }
+}
+
+console.log(menu());
+console.log(repondre(".bonjour")
